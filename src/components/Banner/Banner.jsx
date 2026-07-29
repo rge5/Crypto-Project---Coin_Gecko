@@ -9,7 +9,7 @@ function Banner() {
 
       <div className="absolute left-0 right-0 mx-auto top-20 w-[20rem]">
         <div flex flex-col gap-4>
-          <div className="text-5xl font-semibold text-white">
+          <div className="mb-4 text-5xl font-semibold text-white">
             Crypto Tracker
           </div>
           <div className="text-sm text-center text-white font-asemibold">
