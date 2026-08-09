@@ -1,4 +1,4 @@
-function Navbar() {
+function Navbar({setCurrency}) {
   return (
     <div className="shadow-sm navbar bg-base-100">
       <div className="navbar-start">
@@ -21,17 +21,14 @@ function Navbar() {
             </svg>
           </div>
           <ul
-            tabIndex="-1"
-            className="p-2 mt-3 shadow menu menu-sm dropdown-content bg-base-100 rounded-box z-1 w-52"
-          >
-            <li>
-              <a>Homepage</a>
+      tabIndex={0}
+      className="z-10 p-2 mt-3 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+    >
+            <li onClick={ () => setCurrency('inr')}>
+              <a>INR</a>
             </li>
-            <li>
-              <a>Portfolio</a>
-            </li>
-            <li>
-              <a>About</a>
+            <li onClick={() => setCurrency('usd')}>
+              <a>USD</a>
             </li>
           </ul>
         </div>

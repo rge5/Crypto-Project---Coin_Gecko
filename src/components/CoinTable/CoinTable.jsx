@@ -2,12 +2,12 @@ import { useState } from "react";
 import { fetchCoinData } from "../../services/fetchCoinData";
 import { useQuery } from "@tanstack/react-query";
 
-function CoinTable() {
+function CoinTable({ currency }) {
+  
   const [page, setPage] = useState(1);
-
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["coins", page],
-    queryFn: () => fetchCoinData(page, "usd"),
+    queryKey: ["coins", page, currency],
+    queryFn: () => fetchCoinData(page, currency),
     //   retry: 2,
     //   retryDelay: 1000,
     gcTime: 1000 * 60 * 2, // cacheTime was renamed to gcTime
@@ -41,7 +41,7 @@ function CoinTable() {
                   <div className="w-[5rem] h-[5rem]">
                     <img src={coin.image} className="w-full h-full" />
                   </div>
-                  
+
                   <div className="flex flex-col">
                     <div className="text-3xl">{coin.name}</div>
                     <div className="text-xl">{coin.sybol}</div>
