@@ -23,7 +23,7 @@ const { currency } = currencyStore();
     staleTime: 1000 * 60 * 2,
   });
 
-  return [
+  return {
     historicData,
     isLoading,
     isError,
@@ -31,7 +31,7 @@ const { currency } = currencyStore();
     setDays,
     days,
     currency
-  ]
+  }
 }
 
 export default useFetchCoinHistory;

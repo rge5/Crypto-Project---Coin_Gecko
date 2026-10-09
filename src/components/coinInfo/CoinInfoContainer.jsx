@@ -4,7 +4,7 @@ import Alert from "../Alert/Alert";
 import useFetchCoinHistory from "../../hooks/useFetchCoinHistory";
 
 function CoinInfoCointainer({ coinId }) {
-  const [
+  const {
     historicData,
     isLoading,
     isError,
@@ -12,7 +12,7 @@ function CoinInfoCointainer({ coinId }) {
     setDays,
     days,
     currency,
-  ] = useFetchCoinHistory(coinId);
+ } = useFetchCoinHistory(coinId);
 
   if (isLoading) {
     return <PageLoader />;

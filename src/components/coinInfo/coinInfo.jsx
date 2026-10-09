@@ -4,20 +4,18 @@ import { CategoryScale, elements } from "chart.js";
 import Chart from "chart.js/auto";
 import { chartDays } from "../../helpers/constants";
 
-function CoinInfo({ historicData, setDays, setCoinInterval, days, currency }) {
-  
+Chart.register(CategoryScale);
 
+function CoinInfo({ historicData, setDays, setCoinInterval, days, currency }) {
   function handleDayChange(e) {
     const daysSelected = e.target.options[e.target.selectedIndex].value;
     if (daysSelected == 1) {
-      setCoinInterval("");
+      setCoinInterval?.("");
     } else {
-      setCoinInterval("daily");
+      setCoinInterval?.("daily");
     }
-    setDays(e.target.options[e.target.selectedIndex].value);
+    setDays?.(e.target.options[e.target.selectedIndex].value);
   }
-
-  Chart.register(CategoryScale);
 
   if (!historicData) {
     return <Alert message="No data available" type="info" />;
